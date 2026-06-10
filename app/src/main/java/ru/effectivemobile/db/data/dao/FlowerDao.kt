@@ -14,7 +14,7 @@ interface FlowerDao {
     suspend fun insertAll(flowers: List<Flower>): List<Long>
 
     @Query("SELECT * FROM flowers")
-    fun getAllFlow(): Flow<List<Flower>>   // Flow автоматически обновляется при изменениях
+    fun getAllFlow(): Flow<List<Flower>>
 
     @Query("SELECT * FROM flowers WHERE id = :flowerId")
     suspend fun getById(flowerId: Long): Flower?
